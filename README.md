@@ -47,6 +47,28 @@ Let's Run a PowerShell script to install a web server.
 - Targets: Specify targets by specifying a tag (K: Name, V: windows-ssm)
 - Commands: 
 ``` Install-WindowsFeature -name Web-Server -IncludeManagementTools```
+- Click Run
+- Both should complete. Refresh the Command page after a few minutes to validate.
+- Open a new tab and go to EC2 console
+- Select windows-ssm instances one by one and access their public IPs.
+- You should be able to see IIS in the page.
+
+Let's Run a bash script to install a web server.
+
+- Inside Run Command. click on Run a Command
+- Find the AWS-RunShellScript run command.
+- Targets: Specify targets by specifying a tag (K: Name, V: linux-ssm)
+- Commands:
+```bash
+yum install -y httpd 
+service httpd start
+```
+- Click Run
+- Both should complete. Refresh the Command page after a few minutes to validate
+.
+- Open a new tab and go to EC2 console
+- Select linux-ssm instances one by one and access their public IPs.
+- You should see an apache web server in the page.
 
 
 
